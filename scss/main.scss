@@ -1,0 +1,424 @@
+
+//Font
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+//import
+@import 'variable';
+@import 'reset';
+@import 'global';
+@import 'mixin';
+
+
+.header-desktop {
+    @include media-query(1000px){
+        display: none;
+    }
+}
+
+.header-responsive {
+    display: none;
+    @include media-query(1000px){
+        display: block;
+    }
+}
+
+//slider
+.company-info {
+    background-color: $color-green;
+    padding: 4px;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 4;
+        
+    }
+}
+//desktop
+nav {
+    padding: 12px;
+    li {
+        display: inline-block;
+        margin-right: 15px;
+        &:last-child {
+            margin-right: 0px;
+        }
+        a {
+            color: $color-gray;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+//small
+.header-responsive {
+    background-color: $color-green;
+    height: 100px;
+    position: relative;
+    transition: height .5s ease;
+    .logo {
+        padding: 10px;
+    }
+  
+
+    .toggle-menu {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 2rem;
+        color: #fff;
+    }
+}
+#nav-sm {
+    ul li {
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+        a {
+            padding: 10px 120px;
+            color: #fff;
+            &:hover {
+                background-color: $color-gray;
+                border-radius: 5px;
+            }
+        }
+        
+    }
+}
+
+.active {
+    height: 400px;
+}
+
+
+.slider {
+    position: relative;
+    height: 100vh;
+         
+        .slide {
+            height: 100vh;   
+            width: 100%;   
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            color:#fff;
+            h1 {    
+                text-transform: uppercase;
+                font: {
+                    size: 4.8rem;
+                    weight: bold;
+                }
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+
+
+            a {
+                font-size: 2rem;
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 16px;
+                background-color: $color-green;
+                color: #fff;
+            }
+        }
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            font-size: 6rem;
+            color: #fff;
+            width: 100%;
+            .owl-prev {
+                float: left;
+                margin-left: 20px;
+            }
+            .owl-next {
+                float: right;
+                margin-right: 20px;
+            }
+        }
+}
+
+
+
+//Events 
+#event h3 {
+    padding-left: 20px;
+    border-left: 4px solid $color-green;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+.event-box {
+   
+    clear: both;
+    display: block;
+    margin-bottom: 15px;
+    .date {
+        color:$color-green;
+        margin-right: 10px;
+        border: 2px solid $color-green;
+        padding: 5px;
+        margin-bottom: 10px;
+        h4{
+            font-size: 2rem;
+            margin-bottom: -10px;
+        }
+    }
+}
+
+.board-box {
+    margin-bottom: 25px;
+}
+
+
+.news-box {
+    display: flex;
+    .img-box {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        margin-right: 10px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+//courses
+#courses {
+    h3 {
+        font-size: .8rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    hr {
+        height: 5px;
+        border: none;
+        background: $color-green;
+        width: 50px;
+        text-align: left;
+        display: inline-block;
+        margin-bottom: 50px;
+
+    }
+}
+//owl di nagana yung nav sa JS?
+.owl-nav.disabled {
+    display: block!important;
+    position: absolute;
+    top: -40px;
+    right: 30px;
+    .owl-prev span, .owl-next span {
+        padding: 0 10px;
+        margin-right: 4px;
+        font-size: 1.5rem;
+        background-color:$color-gray;
+        color: #fff;
+    }
+    .owl-prev span:focus, .owl-next span:focus {
+        outline: none;
+    }
+}
+
+.owl-carousel {
+    position: relative;
+}
+
+
+.course-box {
+    border: 1px solid $color-gray;
+    margin: 0 5px;
+    .img-box {
+        overflow: hidden;
+        height: 250px;
+    }
+    .course-content {
+        padding: 25px;
+        h3 {
+            font-size: .8rem;
+        }
+
+        h4 {
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        a {
+            @include btn($color-green);
+            display: inline-block;
+            margin-top: 20px;
+        }
+    }
+}
+
+
+
+
+//video
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    position: relative;
+    background: url(https://www.trinitypride.org/images/Schools_THS.jpg);
+    background: {
+        position: center center;
+        size: cover;
+        repeat:no-repeat;
+    }
+    .video-control {
+        z-index: 1;
+        color:$color-light;
+        h3 {
+            font-size: 1rem;
+        } 
+        i {
+            display: inline-block;
+            padding: 30px;
+            margin: -5px 0 20px 0;
+            background: #fff;
+            font-size: 1.2rem;
+            color: $color-dark;
+            border-radius: 50%;
+        }
+
+    }
+    &:before {
+        position: absolute;
+        content: "";
+        width: 100%;            
+        height: 100%;
+        background-color:  $color-green;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        display: block;
+        opacity: .8;
+    }
+}
+
+
+
+
+//president corner
+#president-corner {
+    background: url(https://www.allkpop.com/upload/2016/04/af_org/song-hye-kyo_1460412508_af_org.jpg);
+    background: {
+        position: -300px center;
+        size: cover;
+        height: 50px;
+        repeat:no-repeat;
+        color: #e9e9e9;
+    }
+
+.president-wrapper {
+    h4 {
+        font-size: 3rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    a {
+        display: inline-block;
+        padding: 10px 50px;
+        margin: 20px 0;
+        color: $color-dark;
+        border: 2px solid $color-green;
+        }
+    }
+}
+
+
+footer {
+    background: $color-dark;
+    color:$color-light;
+    padding: 100px 0;
+    .footer-box {
+        padding:10px;
+        .footer-content {
+            display: flex;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid darken($color-gray,20%);
+            i {
+                font-size: 3rem;
+                padding-right: 8px;
+            }
+            a {
+                display: block;
+                margin-top: -8px;
+                color:$color-gray; 
+                font-weight: 400;
+                text-decoration: none;
+            }
+            .inner {
+                margin-top: 5px;
+            }
+        } 
+        p {
+            color: $color-gray;
+            text-decoration: none;  
+        }
+        ul li {
+            display: inline-block;
+            a {
+                color: darken($color-light, 20%);
+                margin-top: 20px;
+                display: block;
+                padding: 8px;
+                font-size: .8rem;
+                background: darken($color-light, 70%);
+                border-radius: 50%;
+            }
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px 5px;
+            margin-bottom: 8px;
+        }
+        textarea{
+            height: 100px;
+        }
+        button {
+            @include btn(#bc1515);
+        }
+    } 
+}
+.copyright {
+    background-color: $color-dark;
+    p {
+        color: $color-gray;
+        font-size: .8rem;
+        border-top: 1px solid  darken($color-gray,20%);
+        padding: 20px 0;
+    }
+}
+
+
+ 

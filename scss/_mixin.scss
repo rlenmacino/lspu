@@ -1,0 +1,13 @@
+@mixin btn ($bg-color) {
+    color: $color-light;
+    padding: 15px;
+    border-radius: 5px;
+    background-color:$bg-color;
+    border: none;
+}
+
+@mixin media-query($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
